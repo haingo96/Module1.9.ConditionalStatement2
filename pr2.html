@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="pressKey()">
+<img src="https://img.freepik.com/premium-vector/high-detailed-realistic-soccer-ball-transparent-background_108855-2328.jpg?w=2000"
+     alt="" style="position: relative; left: 0; top: 0; width: 200px; height: 200px" id="ballImage">
+<br>
+
+<script>
+    let ballImage = document.getElementById('ballImage')
+
+    function pressKey() {
+        window.addEventListener('keydown', makeMove)
+    }
+
+    function makeMove(event) {
+        switch (event.keyCode) {
+            case 37:
+                moveLeft();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 38:
+                moveUp();
+                break;
+            case 40:
+                moveDown();
+                break;
+        }
+    }
+
+    function moveUp() {
+        ballImage.style.top = parseInt(ballImage.style.top) - 10 + 'px';
+    }
+
+    function moveDown() {
+        ballImage.style.top = parseInt(ballImage.style.top) + 10 + 'px';
+    }
+
+    function moveLeft() {
+        ballImage.style.left = parseInt(ballImage.style.left) - 10 + 'px';
+    }
+
+    function moveRight() {
+        ballImage.style.left = parseInt(ballImage.style.left) + 10 + 'px';
+    }
+</script>
+</body>
+</html>
