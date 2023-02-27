@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 600px;
+            height: 150px;
+            display: block;
+            margin: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+<img src="" alt="" id="partOne">
+<img src="" alt="" id="partTwo">
+<img src="" alt="" id="partThree">
+<img src="" alt="" id="partFour">
+<img src="" alt="" id="partFive">
+
+<script>
+    let partOne = document.getElementById('partOne')
+    let partOneSource = './img/funny-cat1_part1x1.jpg'
+    partOne.src = './img/funny-cat1_part1x1.jpg'
+    partOne.addEventListener('click', changePartOne)
+
+    function changePartOne() {
+        switch (partOneSource) {
+            case './img/funny-cat1_part1x1.jpg':
+                partOneSource = './img/monkey_part1x1.jpg'
+                partOne.src = partOneSource
+                break;
+            case './img/monkey_part1x1.jpg':
+                partOneSource = './img/panda_swap_part1x1.jpg'
+                partOne.src = partOneSource
+                break;
+            case './img/panda_swap_part1x1.jpg':
+                partOneSource = './img/funny-cat1_part1x1.jpg'
+                partOne.src = partOneSource
+                break;
+        }
+        checkPhoto()
+    }
+
+    let partTwo = document.getElementById('partTwo')
+    let partTwoSource = './img/monkey_part2x1.jpg'
+    partTwo.src = './img/monkey_part2x1.jpg'
+    partTwo.addEventListener('click', changePartTwo)
+
+    function changePartTwo() {
+        switch (partTwoSource) {
+            case './img/monkey_part2x1.jpg':
+                partTwoSource = './img/panda_swap_part2x1.jpg'
+                partTwo.src = partTwoSource
+                break;
+            case './img/panda_swap_part2x1.jpg':
+                partTwoSource = './img/funny-cat1_part2x1.jpg'
+                partTwo.src = partTwoSource
+                break;
+            case './img/funny-cat1_part2x1.jpg':
+                partTwoSource = './img/monkey_part2x1.jpg'
+                partTwo.src = partTwoSource
+                break;
+        }
+        checkPhoto()
+    }
+
+    let partThree = document.getElementById('partThree')
+    let partThreeSource = './img/panda_swap_part3x1.jpg'
+    partThree.src = './img/panda_swap_part3x1.jpg'
+    partThree.addEventListener('click', changePartThree)
+
+    function changePartThree() {
+        switch (partThreeSource) {
+            case './img/panda_swap_part3x1.jpg':
+                partThreeSource = './img/funny-cat1_part3x1.jpg'
+                partThree.src = partThreeSource
+                break;
+            case './img/funny-cat1_part3x1.jpg':
+                partThreeSource = './img/monkey_part3x1.jpg'
+                partThree.src = partThreeSource
+                break;
+            case './img/monkey_part3x1.jpg':
+                partThreeSource = './img/panda_swap_part3x1.jpg'
+                partThree.src = partThreeSource
+                break;
+        }
+        checkPhoto()
+    }
+
+    let partFour = document.getElementById('partFour')
+    let partFourSource = './img/funny-cat1_part4x1.jpg'
+    partFour.src = './img/funny-cat1_part4x1.jpg'
+    partFour.addEventListener('click', changePartFour)
+
+    function changePartFour() {
+        switch (partFourSource) {
+            case './img/funny-cat1_part4x1.jpg':
+                partFourSource = './img/monkey_part4x1.jpg'
+                partFour.src = partFourSource
+                break;
+            case './img/monkey_part4x1.jpg':
+                partFourSource = './img/panda_swap_part4x1.jpg'
+                partFour.src = partFourSource
+                break;
+            case './img/panda_swap_part4x1.jpg':
+                partFourSource = './img/funny-cat1_part4x1.jpg'
+                partFour.src = partFourSource
+                break;
+        }
+        checkPhoto()
+    }
+
+    let partFive = document.getElementById('partFive')
+    let partFiveSource = './img/funny-cat1_part5x1.jpg'
+    partFive.src = './img/funny-cat1_part5x1.jpg'
+    partFive.addEventListener('click', changePartFive)
+
+    function changePartFive() {
+        switch (partFiveSource) {
+            case './img/funny-cat1_part5x1.jpg':
+                partFiveSource = './img/monkey_part5x1.jpg'
+                partFive.src = partFiveSource
+                break;
+            case './img/monkey_part5x1.jpg':
+                partFiveSource = './img/panda_swap_part5x1.jpg'
+                partFive.src = partFiveSource
+                break;
+            case './img/panda_swap_part5x1.jpg':
+                partFiveSource = './img/funny-cat1_part5x1.jpg'
+                partFive.src = partFiveSource
+                break;
+        }
+        checkPhoto()
+    }
+
+    function checkPhoto() {
+        if ((partOneSource === './img/funny-cat1_part1x1.jpg' && partTwoSource === './img/funny-cat1_part2x1.jpg' && partThreeSource === './img/funny-cat1_part3x1.jpg' && partFourSource === './img/funny-cat1_part4x1.jpg' && partFiveSource === './img/funny-cat1_part5x1.jpg')
+            || (partOneSource === './img/monkey_part1x1.jpg' && partTwoSource === './img/monkey_part2x1.jpg' && partThreeSource === './img/monkey_part3x1.jpg' && partFourSource === './img/monkey_part4x1.jpg' && partFiveSource === './img/monkey_part5x1.jpg')
+            || (partOneSource === './img/panda_swap_part1x1.jpg' && partTwoSource === './img/panda_swap_part2x1.jpg' && partThreeSource === './img/panda_swap_part3x1.jpg' && partFourSource === './img/panda_swap_part4x1.jpg' && partFiveSource === './img/panda_swap_part5x1.jpg')
+        ) {
+            document.getElementById('partOne').style.margin = '0'
+            document.getElementById('partTwo').style.margin = '0'
+            document.getElementById('partThree').style.margin = '0'
+            document.getElementById('partFour').style.margin = '0'
+            document.getElementById('partFive').style.margin = '0'
+            document.getElementById('partOne').style.boxShadow = '20px 20px 10px yellow'
+            document.getElementById('partTwo').style.boxShadow = '20px 20px 10px yellow'
+            document.getElementById('partThree').style.boxShadow = '20px 20px 10px yellow'
+            document.getElementById('partFour').style.boxShadow = '20px 20px 10px yellow'
+            document.getElementById('partFive').style.boxShadow = '20px 20px 10px yellow'
+        } else {
+            document.getElementById('partOne').style.margin = '10px 10px'
+            document.getElementById('partTwo').style.margin = '10px 10px'
+            document.getElementById('partThree').style.margin = '10px 10px'
+            document.getElementById('partFour').style.margin = '10px 10px'
+            document.getElementById('partFive').style.margin = '10px 10px'
+            document.getElementById('partOne').style.boxShadow = ''
+            document.getElementById('partTwo').style.boxShadow = ''
+            document.getElementById('partThree').style.boxShadow = ''
+            document.getElementById('partFour').style.boxShadow = ''
+            document.getElementById('partFive').style.boxShadow = ''
+        }
+    }
+</script>
+</body>
+</html>
