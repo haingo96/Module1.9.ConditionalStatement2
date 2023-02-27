@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="https://img.freepik.com/premium-vector/high-detailed-realistic-soccer-ball-transparent-background_108855-2328.jpg?w=2000"
+     alt="" style="width: 200px; height: 200px" id="ballImage">
+<p>Click button below to move the image to right</p>
+<button type="button" id="clickMe">Click me</button>
+
+<script>
+    let ballImage = document.getElementById('ballImage')
+    let btn = document.getElementById('clickMe')
+    btn.addEventListener('click', moveRight)
+
+    function init() {
+        ballImage = document.getElementById('ballImage')
+        ballImage.style.position = 'relative'
+        ballImage.style.left = '0px'
+    }
+
+    function moveRight() {
+        ballImage.style.left = parseInt(ballImage.style.left) + 10 + 'px';
+    }
+
+    window.onload = init
+</script>
+</body>
+</html>
