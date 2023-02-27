@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            width: 250px;
+            padding: 20px 20px;
+            border-color: blue;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        button{
+            display: block;
+        }
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            row-gap: 5px;
+        }
+
+        .grid-item{
+            width: 50px;
+            height: 50px;
+        }
+
+        .input-number{
+            width: 238px;
+            height: 50px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-size: xx-large;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <button class="input-number" type="button" id="inputNumber">0</button>
+
+    <div class="grid-container">
+
+        <button class="grid-item" type="button" value="1" id="one">1</button>
+        <button class="grid-item" type="button" value="2" id="two">2</button>
+        <button class="grid-item" type="button" value="3" id="three">3</button>
+        <button class="grid-item" type="button" id="add">+</button>
+
+        <button class="grid-item" type="button" value="4" id="four">4</button>
+        <button class="grid-item" type="button" value="5" id="five">5</button>
+        <button class="grid-item" type="button" value="6" id="six">6</button>
+        <button class="grid-item" type="button" id="sub">-</button>
+
+        <button class="grid-item" type="button" value="7" id="seven">7</button>
+        <button class="grid-item" type="button" value="8" id="eight">8</button>
+        <button class="grid-item" type="button" value="9" id="nine">9</button>
+        <button class="grid-item" type="button" id="mul">*</button>
+
+        <button class="grid-item" type="button" id="reset">C</button>
+        <button class="grid-item" type="button" value="0" id="zero">0</button>
+        <button class="grid-item" type="button" id="equal">=</button>
+        <button class="grid-item" type="button" id="div">/</button>
+    </div>
+
+</form>
+
+<script>
+    let firstNumber
+    let secondNumber
+    let math
+    let inputNumber = document.getElementById('inputNumber').value
+
+    // khai bao cac button chu so va cac su kien lien quan den button chu so
+    let buttonOne = document.getElementById('one')
+    buttonOne.addEventListener('click', addOne)
+    function addOne() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '1'
+        inputNumber = inputNumber + '1'
+    }
+
+    let buttonTwo = document.getElementById('two')
+    buttonTwo.addEventListener('click', addTwo)
+    function addTwo() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '2'
+        inputNumber = inputNumber + '2'
+    }
+
+    let buttonThree = document.getElementById('three')
+    buttonThree.addEventListener('click', addThree)
+    function addThree() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '3'
+        inputNumber = inputNumber + '3'
+    }
+
+    let buttonFour = document.getElementById('four')
+    buttonFour.addEventListener('click', addFour)
+    function addFour() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '4'
+        inputNumber = inputNumber + '4'
+    }
+
+    let buttonFive = document.getElementById('five')
+    buttonFive.addEventListener('click', addFive)
+    function addFive() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '5'
+        inputNumber = inputNumber + '5'
+    }
+
+    let buttonSix = document.getElementById('six')
+    buttonSix.addEventListener('click', addSix)
+    function addSix() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '6'
+        inputNumber = inputNumber + '6'
+    }
+
+    let buttonSeven = document.getElementById('seven')
+    buttonSeven.addEventListener('click', addSeven)
+    function addSeven() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '7'
+        inputNumber = inputNumber + '7'
+    }
+
+    let buttonEight = document.getElementById('eight')
+    buttonEight.addEventListener('click', addEight)
+    function addEight() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '8'
+        inputNumber = inputNumber + '8'
+    }
+
+    let buttonNine = document.getElementById('nine')
+    buttonNine.addEventListener('click', addNine)
+    function addNine() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '9'
+        inputNumber = inputNumber + '9'
+    }
+
+    let buttonZero = document.getElementById('zero')
+    buttonZero.addEventListener('click', addZero)
+    function addZero() {
+        document.getElementById('inputNumber').innerHTML = inputNumber + '0'
+        inputNumber = inputNumber + '0'
+    }
+
+    // khai bao cac button phep toan va cac hanh dong lien quan
+    let addButton = document.getElementById('add')
+    addButton.addEventListener('click', doAdd)
+    function doAdd(){
+        firstNumber = parseFloat(inputNumber)
+        inputNumber = ''
+        document.getElementById('inputNumber').innerHTML = ''
+        math = 'add'
+    }
+
+    let subButton = document.getElementById('sub')
+    subButton.addEventListener('click', doSub)
+    function doSub(){
+        firstNumber = parseFloat(inputNumber)
+        inputNumber = ''
+        document.getElementById('inputNumber').innerHTML = ''
+        math = 'sub'
+    }
+
+    let mulButton = document.getElementById('mul')
+    mulButton.addEventListener('click', doMul)
+    function doMul(){
+        firstNumber = parseFloat(inputNumber)
+        inputNumber = ''
+        document.getElementById('inputNumber').innerHTML = ''
+        math = 'mul'
+    }
+
+    let divButton = document.getElementById('div')
+    divButton.addEventListener('click', doDiv)
+    function doDiv(){
+        firstNumber = parseFloat(inputNumber)
+        inputNumber = ''
+        document.getElementById('inputNumber').innerHTML = ''
+        math = 'div'
+    }
+
+    // logic tinh toan va dua ket qua
+    let equalButton = document.getElementById('equal')
+    equalButton.addEventListener('click', showResult)
+    function showResult(){
+        secondNumber = parseFloat(inputNumber)
+        switch (math){
+            case 'add':
+                document.getElementById('inputNumber').innerHTML = firstNumber + secondNumber
+                break;
+            case 'sub':
+                document.getElementById('inputNumber').innerHTML = firstNumber - secondNumber
+                break;
+            case 'mul':
+                document.getElementById('inputNumber').innerHTML = firstNumber * secondNumber
+                break;
+            case 'div':
+                document.getElementById('inputNumber').innerHTML = firstNumber / secondNumber
+                break;
+        }
+        inputNumber = ''
+    }
+
+    let resetButton = document.getElementById('reset')
+    resetButton.addEventListener('click', doReset)
+    function doReset(){
+        firstNumber = 0
+        secondNumber = 0
+        math = ''
+        document.getElementById('inputNumber').innerHTML = ''
+    }
+
+</script>
+</body>
+</html>
