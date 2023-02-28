@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+<label class="switch">
+    <input type="checkbox" id="input1">
+    <span class="slider round"></span>
+</label>
+<span>Good</span>
+<br><br>
+
+<label class="switch">
+    <input type="checkbox" id="input2">
+    <span class="slider round"></span>
+</label>
+<span>Fast</span>
+<br><br>
+
+<label class="switch">
+    <input type="checkbox" id="input3">
+    <span class="slider round"></span>
+</label>
+<span>Cheap</span>
+<br><br>
+
+<script>
+    let input1 = document.getElementById('input1')
+    input1.addEventListener('click', doTurn1)
+
+    let input2 = document.getElementById('input2')
+    input2.addEventListener('click', doTurn2)
+
+    let input3 = document.getElementById('input3')
+    input3.addEventListener('click', doTurn3)
+
+    function doTurn1() {
+        if (input1.checked == true) {
+            if (input3.checked == true) {
+                input3.checked = false
+            }
+        }
+    }
+
+    function doTurn2() {
+        if (input2.checked == true) {
+            if (input1.checked == true) {
+                input1.checked = false
+            }
+        }
+    }
+
+    function doTurn3() {
+        if (input3.checked == true) {
+            if (input2.checked == true) {
+                input2.checked = false
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
