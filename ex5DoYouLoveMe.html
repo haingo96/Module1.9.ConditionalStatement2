@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Do you love me?</h2>
+<button id="yes">Yes</button>
+<button id="no">No</button>
+
+<script>
+  let yesBtn = document.getElementById('yes')
+  yesBtn.addEventListener('click', doLove)
+
+  function doLove(){
+    alert('<3')
+  }
+
+  let noBtn = document.getElementById('no')
+  noBtn.addEventListener('mouseover', jumpBtn)
+  function jumpBtn(){
+    noBtn.style.position = 'relative'
+    noBtn.style.left = Math.random() * 350  + 'px'
+    noBtn.style.top = Math.random() * 350 + 'px'
+  }
+</script>
+</body>
+</html>
