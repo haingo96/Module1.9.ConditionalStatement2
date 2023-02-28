@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = parseFloat(prompt('Input your a in ax + b !'))
+  let b = parseFloat(prompt('Input your b in ax + b !'))
+  if (a === 0 && b === 0){
+    alert('Equation has infinite numbers of root')
+  } else if (a === 0 && b !== 0){
+    alert("Equation doesn't have any roots")
+  }else {
+    alert('x = ' + (-b / a))
+  }
+</script>
+</body>
+</html>

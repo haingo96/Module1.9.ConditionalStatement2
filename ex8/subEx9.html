@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt('Input your edge a!'))
+    let b = parseFloat(prompt('Input your edge b!'))
+    let c = parseFloat(prompt('Input your edge c!'))
+    if (a > 0 && b > 0 && c > 0
+        && a + b > c
+        && a + c > b
+        && b + c > a) {
+        alert('This is a triangle')
+    }else {
+        alert('This is not a triangle')
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let income = parseFloat(prompt('Input your income (VND)!'))
+    let tax
+
+    switch (true) {
+        case (income > 0 && income < 5000000):
+            tax = income * 5 / 100
+            break;
+        case (income >= 5000000 && income < 10000000):
+            tax = 250000 + (income - 5000000) * 10 / 100
+            break;
+        case (income >= 10000000 && income < 18000000):
+            tax = 750000 + (income - 10000000) * 15 / 100
+            break;
+        case (income >= 18000000 && income < 32000000):
+            tax = 1950000 + (income - 18000000) * 20 / 100
+            break;
+        case (income >= 32000000 && income < 52000000):
+            tax = 4750000 + (income - 32000000) * 25 / 100
+            break;
+        case (income >= 52000000 && income < 80000000):
+            tax = 9750000 + (income - 52000000) * 30 / 100
+            break;
+        case (income >= 80000000 ):
+            tax = 18150000 + (income - 80000000) * 35 / 100
+            break;
+    }
+</script>
+</body>
+</html>

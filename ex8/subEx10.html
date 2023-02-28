@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let electricUsed = parseFloat(prompt('Input your electric used (kWh)!'))
+  let price
+  switch (true){
+    case (electricUsed > 0 && electricUsed <= 50):
+      price = electricUsed * 1678
+      alert(price + 'VND')
+      break;
+    case (electricUsed > 50 && electricUsed <= 100):
+      price = 50 * 1678 + (electricUsed - 50) * 1734
+      alert(price + 'VND')
+      break;
+    case (electricUsed > 100 && electricUsed <= 200):
+      price = 50 * 1678 + 50 * 1734 + (electricUsed - 100) * 2014
+      alert(price + 'VND')
+      break;
+    case (electricUsed > 200 && electricUsed <= 300):
+      price = 50 * 1678 + 50 * 1734 + 100 * 2014 + (electricUsed - 200) * 2536
+      alert(price + 'VND')
+      break;
+    case (electricUsed > 300 && electricUsed <= 400):
+      price = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (electricUsed- 300) * 2834
+      alert(price + 'VND')
+      break;
+    case (electricUsed > 400):
+      price = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (electricUsed- 400) * 2927
+      alert(price + 'VND')
+      break;
+  }
+</script>
+</body>
+</html>

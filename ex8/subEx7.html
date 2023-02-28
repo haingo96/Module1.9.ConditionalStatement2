@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt('Input your a in ax^2 + bx + c'))
+    let b = parseFloat(prompt('Input your b in ax^2 + bx + c'))
+    let c = parseFloat(prompt('Input your c in ax^2 + bx + c'))
+    let delta = (b * b) - (4 * a * c)
+
+    if (delta < 0) {
+        alert('Equation has no roots')
+    } else if (delta === 0) {
+        alert('x = ' + (-b) / (2 * a))
+    } else {
+        alert('x = ' + (((-b) + Math.sqrt(delta))/ (2 * a))
+            + ' or ' +
+            (((-b) - Math.sqrt(delta))/ (2 * a))
+        )
+    }
+</script>
+</body>
+</html>
