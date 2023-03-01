@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let minutes = parseInt(prompt("Input minutes"))
+    let seconds = parseInt(prompt("Input seconds"))
+    let money
+    if (seconds === 0) {
+        money = minutes * 3300
+        alert(money)
+    } else {
+        money = (minutes + 1) * 3300
+        alert(money)
+    }
+</script>
+</body>
+</html>
